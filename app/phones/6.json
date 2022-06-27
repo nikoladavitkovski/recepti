@@ -1,0 +1,33 @@
+{
+  "id": 5,
+  "recipe name":"omlette",
+  "source":"recipe.mk",
+  "number of ingredients": 5,
+  "ingredients":[
+    {
+        "name": "tomatoes",
+        "quantity": 2
+ },
+  {
+    "name":"eggs",
+    "quantity": 5
+  },
+  {
+    "name":"salt",
+    "quantity" : 0.2
+  },
+  {
+    "name":"peppers",
+    "quantity": 0.1
+  },
+  {
+    "name":"cheese",
+    "quantity" : 5
+  }
+],
+"instructions":"mix eggs & cheese",
+"preparation time":{
+    "hours":0,
+    "minutes":15
+}
+}
