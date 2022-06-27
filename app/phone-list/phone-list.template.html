@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2">
@@ -20,17 +21,47 @@
     <div class="col-md-10">
       <!--Body content-->
 
-      <ul class="phones">
-        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp"
-            class="thumbnail phone-list-item">
-          <a href="#!/phones/{{phone.id}}" class="thumb">
-            <img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
-          </a>
-          <a href="#!/phones/{{phone.id}}">{{phone.name}}</a>
-          <p>{{phone.snippet}}</p>
-        </li>
-      </ul>
+      <table class="phones">
+      <tr>
+      <th ng-repeat="columnname in $ctrl.recipeColumnNames">
+      {{columnname}}
+      </th>
+      </tr>
+      
+        <tr ng-repeat="recipe in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp"
+            class="phone-list-item">
+
+
+
+
+
+          <td>
+          {{recipe.id}}
+          </td>
+          <td>
+          {{recipe['recipe name']}}
+          </td>
+          <td>
+          {{recipe.source}}
+          </td>
+          <td>
+          {{recipe['number of ingredients']}}
+          </td>
+          <td>
+          {{recipe['ingredients']}}
+          </td>
+          <td>
+          {{recipe.instructions}}
+          </td>
+          <td>
+          {{recipe['preparation time']}}
+          </td>
+
+        </tr>
+      </table>
 
     </div>
   </div>
 </div>
+</body>
+</html>

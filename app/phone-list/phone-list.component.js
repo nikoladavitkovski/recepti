@@ -9,6 +9,7 @@ angular.
       function PhoneListController(Phone) {
         this.phones = Phone.query();
         this.orderProp = 'age';
+        this.recipeColumnNames = ['id','recipe name','source','number of ingredients','ingredients','instructions','preparation time'];
       }
     ]
   });
