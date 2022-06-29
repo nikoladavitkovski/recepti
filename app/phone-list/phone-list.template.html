@@ -2,13 +2,8 @@
   <div class="row">
     <div class="col-md-2">
       <!--Sidebar content-->
-
         <button type="submit" ng-repeat="#!/phones/phones/{{recipe.ingredients}}">
         Ingredients:
-        </button>
-
-        <button type="submit" ng-repeat="#!/phones/phones/{{recipe['instructions']}}">
-        Instructions:
         </button>
 
         <button type="submit" ng-repeat="#!/phones/phones/{{recipe.details}}">
@@ -20,6 +15,39 @@
       </p>
 
       <p>
+          <label text="Recipe name:omlette"/></label>
+          <label text="Recipe source:recipe.mk"/></label>
+          <label text="Ingredients"/>Ingredients: eggs:2,
+          salt:0.2,
+          peppers:0.1,
+          cheese:5,
+          </label>
+          <label text="Instructions"/>Instructions:mix eggs & cheese,eggs are broken & mixed with milk and cheese,after that the mixed eggs are prepared in hot oil
+          <h4>
+          </p>
+          <button type="button" value="submit">
+          Recipe
+          </button>
+          </h4>
+          </label>
+      <button type="button" ng-repeat="#!/phones/{{'recipe instructions'}}">
+      Recipe details:
+      <th>
+      <td>
+      <h5>
+      <p>{recipe.id}</p>
+      <p>{recipe.source}</p>
+      <p>{recipe['recipe instructions']}</p>
+      <p>{recipe['recipe ingredients']}</p>
+      <p>{recipe['preparation time']}</p>
+      </h5>
+      Recipe deleted
+      </td>
+      </th>
+      </button>
+      </p>
+
+      <p>
         Sort by:
         <select ng-model="$ctrl.orderProp">
           <option value="name">Alphabetical</option>
@@ -27,9 +55,7 @@
         </select>
       </p>
 
-      <p>
-
-      </p>
+      
 
     </div>
     <div class="col-md-10">
@@ -45,9 +71,7 @@
       
         <tr ng-repeat="recipe in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp"
             class="phone-list-item">
-
         
-
           <td>
           {{recipe.id}}
           </td>
@@ -63,10 +87,10 @@
           <td>
           {{recipe['ingredients']}}
           </td>
-          <br/>
           <td>
           {{recipe['instructions']}}
-          mix eggs & cheese,eggs are broken & mixed with milk and cheese,after that the mixed eggs are prepared in hot oil
+          Omlette:mix eggs & cheese,eggs are broken & mixed with milk and cheese,after that the mixed eggs are prepared in hot oil
+          Soup: put oil & and mix it with meat
           </td>
           <td>
           {{recipe['preparation time']}}
