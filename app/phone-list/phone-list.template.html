@@ -3,9 +3,20 @@
     <div class="col-md-2">
       <!--Sidebar content-->
 
+        <button type="submit" ng-repeat="#!/phones/phones/{{recipe.ingredients}}">
+        Ingredients:
+        </button>
+
+        <button type="submit" ng-repeat="#!/phones/phones/{{recipe['instructions']}}">
+        Instructions:
+        </button>
+
+        <button type="submit" ng-repeat="#!/phones/phones/{{recipe.details}}">
+        Details:
+        </button>
       <p>
         Search:
-        <input ng-model="$ctrl.query" />
+        <input ng-model="$ctrl.query"/>
       </p>
 
       <p>
@@ -16,6 +27,10 @@
         </select>
       </p>
 
+      <p>
+
+      </p>
+
     </div>
     <div class="col-md-10">
       <!--Body content-->
@@ -24,15 +39,14 @@
       <tr>
       <th ng-repeat="columnname in $ctrl.recipeColumnNames">
       {{columnname}}
+      {{recipe}}
       </th>
       </tr>
       
         <tr ng-repeat="recipe in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp"
             class="phone-list-item">
 
-
-
-
+        
 
           <td>
           {{recipe.id}}
@@ -49,17 +63,38 @@
           <td>
           {{recipe['ingredients']}}
           </td>
+          <br/>
           <td>
-          {{recipe.instructions}}
+          {{recipe['instructions']}}
+          mix eggs & cheese,eggs are broken & mixed with milk and cheese,after that the mixed eggs are prepared in hot oil
           </td>
           <td>
           {{recipe['preparation time']}}
           </td>
 
           <td>
-          <button type="button" ng-href="#!/phones/{{recipe.id}}">Details</button>
+          <button type="button" ng-href="#!/phones/{{recipe.id}}">Details
+          <p>
+          Showing results:
+          <select ng-model="$ctrl.query">
+          <option class="details">Showing</option>
+          <option class="none">Non-conclusive</button>
+          </select>
+          </p>
+          </th>
+          <h6>
+          <td>
+          Recipe details:
+          <p>{{recipe['preparation time']}}</p>
+          <p>{{recipe['instructions']}}</p>
+          <p>{{recipe['preparation ingredients']}}</p>
+          <p>{{recipe['recipe source']}}</p>
+          <p>{{recipe['recipe name']}}</p>
           </td>
-
+          </h6>
+          </button>
+          
+          </td>
         </tr>
       </table>
 
